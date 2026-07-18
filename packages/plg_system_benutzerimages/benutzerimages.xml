@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade" version="4.0">
+    <name>System - Benutzerbilder Ordner</name>
+    <element>benutzerimages</element>
+    <version>1.2</version>
+    <creationDate>2026</creationDate>
+    <author>Andreas Rottmann</author>
+    <copyright>Copyright (C) 2026 Andreas Rottmann. Alle Rechte vorbehalten.</copyright>
+    <license>Proprietär</license>
+    <description>Legt fehlende Shooting-Ordner automatisch an, sobald ein Admin das Backend aufruft.</description>
+
+    <services>
+        <serviceprovider file="services/provider.php" />
+    </services>
+
+    <namespace path="src">AndreasRottmann\Plugin\System\BenutzerImages</namespace>
+
+    <files>
+        <folder plugin="benutzerimages">services</folder>
+        <folder>src</folder>
+    </files>
+</extension>

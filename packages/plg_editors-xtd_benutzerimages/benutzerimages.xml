@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="editors-xtd" method="upgrade" version="4.0">
+    <name>Editor-Button - Benutzerbilder</name>
+    <element>benutzerimages</element>
+    <version>1.2</version>
+    <creationDate>2026</creationDate>
+    <author>Andreas Rottmann</author>
+    <copyright>Copyright (C) 2026 Andreas Rottmann. Alle Rechte vorbehalten.</copyright>
+    <license>Proprietär</license>
+    <description>Fügt den Platzhalter [benutzer_images] per Klick in den Artikel-Editor ein.</description>
+
+    <services>
+        <serviceprovider file="services/provider.php" />
+    </services>
+
+    <namespace path="src">AndreasRottmann\Plugin\EditorsXtd\BenutzerImages</namespace>
+
+    <files>
+        <folder plugin="benutzerimages">services</folder>
+        <folder>src</folder>
+    </files>
+</extension>

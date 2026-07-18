@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="content" method="upgrade" version="4.0">
+    <name>Inhalt - Benutzerbilder</name>
+    <element>benutzerimages</element>
+    <version>1.2</version>
+    <creationDate>2026</creationDate>
+    <author>Andreas Rottmann</author>
+    <copyright>Copyright (C) 2026 Andreas Rottmann. Alle Rechte vorbehalten.</copyright>
+    <license>Proprietär</license>
+    <description>Ersetzt [benutzer_images] in Joomla-Beiträgen durch die geschützte Benutzer-Galerie.</description>
+
+    <services>
+        <serviceprovider file="services/provider.php" />
+    </services>
+
+    <namespace path="src">AndreasRottmann\Plugin\Content\BenutzerImages</namespace>
+
+    <files>
+        <folder plugin="benutzerimages">services</folder>
+        <folder>src</folder>
+    </files>
+
+    <media destination="plg_content_benutzerimages" folder="media">
+        <folder>css</folder>
+    </media>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="Einstellungen"
+                      addfieldprefix="AndreasRottmann\Plugin\Content\BenutzerImages\Field">
+                <field
+                    name="user_prefix"
+                    type="text"
+                    label="Benutzer-Präfix"
+                    description="Präfix des Joomla-Benutzernamens, z. B. 'Benutzer' für Benutzer1–8 oder 'folio' für folio1–20."
+                    default="Benutzer"
+                    required="true"
+                />
+                <field
+                    name="user_count"
+                    type="number"
+                    label="Anzahl Benutzer"
+                    description="Maximale Benutzernummer (z. B. 8 für Benutzer1–8 oder 20 für folio1–20)."
+                    default="8"
+                    min="1"
+                    max="99"
+                    required="true"
+                />
+                <field
+                    name="placeholder"
+                    type="text"
+                    label="Platzhalter im Artikel"
+                    default="[benutzer_images]"
+                />
+                <field
+                    name="article_title"
+                    type="text"
+                    label="Beitragstitel"
+                    description="Wird nur bei einem Beitrag mit Platzhalter verwendet. Leer lassen, um den vorhandenen Titel beizubehalten."
+                    default="Ihre Fotos"
+                />
+                <field
+                    name="folder_hinweis"
+                    type="FolderHinweis"
+                    label=""
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

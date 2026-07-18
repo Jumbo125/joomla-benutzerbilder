@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="ajax" method="upgrade" version="4.0">
+    <name>Ajax - Geschützte Shooting-Bilder</name>
+    <element>protectedimage</element>
+    <version>1.2</version>
+    <creationDate>2026</creationDate>
+    <author>Andreas Rottmann</author>
+    <copyright>Copyright (C) 2026 Andreas Rottmann. Alle Rechte vorbehalten.</copyright>
+    <license>Proprietär</license>
+    <description>Geschützter Bildabruf für angemeldete Shooting-Benutzer.</description>
+
+    <files>
+        <filename plugin="protectedimage">protectedimage.php</filename>
+    </files>
+</extension>

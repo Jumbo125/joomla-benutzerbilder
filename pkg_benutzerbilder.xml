@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" method="upgrade">
+    <name>Benutzerbilder - Geschützte Galerie</name>
+    <packagename>benutzerbilder</packagename>
+    <version>1.2</version>
+    <creationDate>2026</creationDate>
+    <author>Andreas Rottmann</author>
+    <packager>Andreas Rottmann</packager>
+    <copyright>Copyright (C) 2026 Andreas Rottmann. Alle Rechte vorbehalten.</copyright>
+    <license>Proprietär</license>
+    <description>Joomla-6-Paket für geschützte Benutzerbilder mit dem Platzhalter [benutzer_images].</description>
+
+    <blockChildUninstall>true</blockChildUninstall>
+
+    <files folder="packages">
+        <file type="plugin" id="protectedimage" group="ajax">plg_ajax_protectedimage.zip</file>
+        <file type="plugin" id="benutzerimages" group="content">plg_content_benutzerimages.zip</file>
+        <file type="plugin" id="benutzerimages" group="system">plg_system_benutzerimages.zip</file>
+        <file type="plugin" id="benutzerimages" group="editors-xtd">plg_editors-xtd_benutzerimages.zip</file>
+    </files>
+</extension>

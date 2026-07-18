@@ -1,0 +1,81 @@
+/* ==========================================================
+   Benutzerbilder – Masonry Gallery
+   ========================================================== */
+
+.masonry-wrapper {
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+/* CSS-Columns-Masonry: passt sich automatisch an Hoch- und
+   Querformat an, kein JS nötig                              */
+.masonry {
+    column-count: 3;
+    column-gap: 10px;
+}
+
+@media (max-width: 900px) {
+    .masonry { column-count: 2; }
+}
+
+@media (max-width: 500px) {
+    .masonry { column-count: 1; }
+}
+
+/* Einzelnes Bild-Element – kein Seitenumbruch mitten im Bild */
+.andi_img_effect_wrap.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #ebebeb;
+    cursor: pointer;
+}
+
+/* Bildnummer – standardmäßig ausgeblendet */
+.andi_img_effect_wrap.masonry-item .bildnummer {
+    display: none;
+}
+
+/* Link-Block ohne Unterstreichung */
+a.andi_img_over_link {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/* Bild: volle Breite, Höhe automatisch → Hoch-/Querformat korrekt */
+.andi_img_effect_wrap.masonry-item img.andi_img_over_effect {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover: leichter Zoom + Abdunkeln */
+.andi_img_effect_wrap.masonry-item:hover img.andi_img_over_effect {
+    transform: scale(1.04);
+    filter: brightness(0.82);
+}
+
+/* Dateiname-Overlay (per CSS sichtbar statt inline visibility:hidden) */
+.andi_img_effect_wrap.masonry-item .andi_over_img {
+    position: absolute !important;
+    visibility: visible !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 0.7rem 0.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    color: #fff;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.andi_img_effect_wrap.masonry-item:hover .andi_over_img {
+    opacity: 1;
+}
